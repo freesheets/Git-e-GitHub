@@ -1,133 +1,310 @@
-# Como usar o Git e Github na prática
+# 🚀 Git e GitHub na Prática
 
-Pra você que é Dev ou iniciante e não conhece o Git, é fundamental que em seus codigos esteja configurado um repositorio, aqui está o passo a passo do que é e como utilizar!
+Se você está começando na programação ou ainda não utiliza **Git e GitHub**, este guia apresenta de forma simples como configurar o Git, conectar sua máquina ao GitHub e versionar seu primeiro projeto.
 
-# Instalando o GIT
-Link com os downloads
+Ter um repositório configurado é uma das práticas fundamentais no desenvolvimento de software, principalmente para **controlar versões, manter o histórico do código e trabalhar em equipe**.
+
+---
+
+# 📥 Instalando o Git
+
+Faça o download do Git pelo site oficial:
+
 https://git-scm.com/downloads
 
-# Vamos começar falando o que é o Git?
-Primeira resposta o que Git e a mesma coisa que o Github? não são ferramentas distintas, mas colaboram de maneira integrada para tornar o desenvolvimento de software mais eficiente.
+Após a instalação, teremos acesso ao **Git Bash**, que será utilizado durante este tutorial.
 
-O Github é uma “rede social dev” em que é possível armazenar e compartilhar projetos de desenvolvimento de software.
-O Git é um sistema de controle de versão de arquivos; em outras palavras, é responsável por guardar o histórico de alterações sempre que alguém modificar algum arquivo que está sendo monitorado por ele.
+---
 
-Desta maneira, o Git e o GitHub são pilares fundamentais que auxiliam as equipes de desenvolvimento a controlar o versionamento de código, rastrear mudanças, colaborar de forma eficiente e garantir que o trabalho em equipe flua sem problemas
+# 🤔 Git e GitHub são a mesma coisa?
 
-segue imagem ilustrativa
-![comparativo-git-github](https://github.com/freesheets/GitTutorial/assets/169274014/387c7a2c-f0ce-4d14-888a-9bfd62a69d19)
+**Não.** Apesar de trabalharem juntos, Git e GitHub possuem funções diferentes.
 
-# Para que serve o Git?
-Em outras palavras em uma empresa você provavelmente vai trabalhar em equipe, e apenas poder acessar o código de outras pessoas colaboradoras não é suficiente, mais do que isso, precisamos manter o histórico dos nossos arquivos e das nossas modificações.
-Muitas vezes mudamos arquivos em grupo, num movimento único onde, no contexto do Git, é um commit. O que, em tradução literal para português, significa “compromisso” ou “comprometer-se” às alterações em um repositório, mas basicamente é um save point do seu codigo.
+**Git** é um sistema de controle de versão. Ele registra o histórico das alterações realizadas nos arquivos de um projeto, permitindo acompanhar o que mudou, quem realizou determinada alteração e até recuperar versões anteriores.
 
-Dessa forma, podemos voltar atrás e recuperar o estado do sistema: como ele era ontem, ou no ano passado, comparar as mudanças para encontrar bugs e estudar otimizações.
+**GitHub** é uma plataforma online utilizada para hospedar repositórios Git. Além de armazenar projetos, oferece recursos para colaboração entre desenvolvedores, como Pull Requests, Issues, Code Review e gerenciamento de projetos.
 
-Segue exemplo abaixo
-![commits](https://github.com/freesheets/GitTutorial/assets/169274014/380ad775-79a3-4264-9291-36a608d53004)
+De forma simples:
 
-OBS: Os commits são os Save Points do seu "jogo", você pode voltar e manipula-los da forma que quiser, podendo voltar, alterar ou excluir commits anteriores etc...
+> **Git controla as versões do seu código. GitHub armazena e facilita a colaboração nesses repositórios.**
 
-# Como faço para executar o Git?
+![Comparativo Git e GitHub](https://github.com/freesheets/GitTutorial/assets/169274014/387c7a2c-f0ce-4d14-888a-9bfd62a69d19)
 
-Primeiramente senhoras e senhores vcs precisaram configurar o git com o github!
+---
 
-1 - Após a intalação do Git, em seu desktop clique com o botão direito do mouse em -> "Open Git Bash Here"
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/7e695477-f962-447f-9d6f-220c04c723b3)
+# 🔄 Para que serve o Git?
 
-2 - Configure seu nome de usuário e e-mail:
-O Git registra quem fez cada alteração no código. Portanto, é importante configurar seu nome de usuário e e-mail. Use os comandos, no terminal:
+Em projetos profissionais, é comum que várias pessoas trabalhem no mesmo código. Por isso, apenas compartilhar os arquivos não é suficiente: precisamos controlar **quem alterou, o que foi alterado e quando determinada mudança aconteceu**.
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/0838d95c-15f8-4f47-93f7-060e26909590)
+É justamente aí que entra o Git.
 
-OBS: Utilize o seu e-mail do Github
+As alterações podem ser registradas através de **commits**, que representam pontos específicos no histórico do projeto.
 
-3 - Cole o texto abaixo, substituindo o email usado no exemplo pelo seu endereço de email do GitHub, para gerar a key de conexão!
+Uma maneira simples de entender é pensar nos commits como **Save Points de um jogo**:
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/254bb807-a018-4b92-bd05-8f97d079b853)
+> 💡 Cada commit registra um estado do projeto. Caso alguma alteração cause problemas, é possível consultar e recuperar versões anteriores do código.
 
-Isso cria uma nova chave SSH, usando o e-mail fornecido como rótulo.
+Isso permite comparar mudanças, encontrar bugs, recuperar código e acompanhar toda a evolução do projeto.
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/690c8e73-9009-4502-8849-3a733926bf57)
+<img width="1710" height="920" alt="image" src="https://github.com/user-attachments/assets/8a7047ba-f3e8-46d5-b683-f447ec023dc3" />
 
- Quando for solicitado a "Inserir um arquivo no qual salvar a chave", você pode pressionar Enter para aceitar o local padrão do arquivo
 
- ![image](https://github.com/freesheets/GitTutorial/assets/169274014/85c203c3-ecca-405b-8b40-cc220c48cb38)
+---
 
- No prompt você pode digitar uma senha ou apenas pressionar Enter
+# ⚙️ Configurando o Git
 
-4 - Com a Key gerada de maneira rapida pelo windows entre no Disco local C: => Usuarios => Seu Usuario => .ssh => id_rsa.pub (Abra com o bloco de notas e copie a chave).
+Antes de utilizar o GitHub, precisamos realizar algumas configurações.
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/9dfb6f5f-9151-4524-b24b-cee57bd5f988)
+## 1. Abra o Git Bash
 
-5 - Abra sua conta no Github, clique no icone do seu perfil e vá em -> Settings
+Após instalar o Git, clique com o botão direito na área de trabalho
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/0330d636-a8dd-47c8-9e31-7440ef7d69bc)
+**Open Git Bash Here**
 
-6 - Depois entrem na opção de SSH and GPG Keys
+![Abrindo Git Bash](https://github.com/freesheets/GitTutorial/assets/169274014/7e695477-f962-447f-9d6f-220c04c723b3)
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/80c9a149-367a-4b02-8867-6b476e92287e)
+---
 
-7 Clique em New SSH Key, coleque um titulo e cole a chave dentro de Key!
+## 2. Configure seu nome e e-mail
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/84c4831e-15c1-4f97-8a42-1acd022a092e)
+O Git registra o autor de cada commit. Configure seu nome e o e-mail utilizado no GitHub:
 
-# Como iniciar um repositorio e subir para o Github?
+```bash
+git config --global user.name "Seu Nome"
+git config --global user.email "seu email@exemplo.com"
+```
 
-1 - Abra o git bash na pasta no qual deseje subir para o Github!
+> **Importante:** utilize preferencialmente o mesmo e-mail configurado em sua conta do GitHub.
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/1981bc8e-7904-4f61-ad5a-f3cd039cab45)
+---
 
-2 -  Crie um Repositório Git:
+# 🔑 Configurando uma chave SSH
 
-Para começar a rastrear seu código, crie um repositório Git em seu projeto. Navegue até a pasta do seu projeto e execute:
+A chave SSH permite autenticar sua máquina no GitHub de forma segura.
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/8cde18c3-5821-41d6-9214-dad0c9079cc4)
+## 3. Gere sua chave SSH
 
-3 -  Adicione Arquivos ao Controle de Versão:
+No Git Bash, execute:
 
-Use o comando git add para adicionar arquivos ao "staging area", que é onde você prepara os arquivos para serem “commitados” ou salvos.
+```bash
+ssh-keygen -t rsa -b 4096 -C "seuemail@exemplo.com"
+```
+Isso criará uma nova chave SSH utilizando seu e-mail como identificação.
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/2bc52399-7e4e-442b-8014-863375bb8c51)
+![SSH Key](https://github.com/freesheets/GitTutorial/assets/169274014/690c8e73-9009-4502-8849-3a733926bf57)
 
-ou digit git add . para adicionar todos os arquivos
+Quando aparecer:
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/09f98765-5e5f-483b-bffc-5e062c3f1a6e)
+```text
+Enter a file in which to save the key
+```
 
-4 - Faça um Commit:
+pressione **Enter** para utilizar o local padrão.
 
-Um commit é seu save point. Use o comando git commit -u "" para criar um commit com uma mensagem descritiva do que foi alterado no projeto.
+![Local da chave SSH](https://github.com/freesheets/GitTutorial/assets/169274014/85c203c3-ecca-405b-8b40-cc220c48cb38)
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/5cd0ad0f-4d15-48ae-bb5c-1ab9d2630049)
+Em seguida, você poderá definir uma senha para proteger sua chave ou pressionar **Enter** para continuar sem senha.
 
-5 - Comando para visualizar o Histórico de Commits:
+---
 
-Use git log para ver o histórico de commits no repositório.
+## 4. Copie sua chave pública
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/e320bb2d-eb83-49f7-bdcd-bbd0a422ceec)
+No Windows, normalmente ela estará localizada em:
 
-6 - Crie seu repositorio no Github
+```text
+C:\Users\SeuUsuario\.ssh\
+```
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/c1408dbc-127f-4393-9d74-600b73178c29)
+![Arquivo SSH](https://github.com/freesheets/GitTutorial/assets/169274014/9dfb6f5f-9151-4524-b24b-cee57bd5f988)
 
-Não adicione o README file para que apareça as opção de ajuda para subir seu repositorio
+Procure pelo arquivo id_rsa.pub  ← 🔑 PÚBLICA copie todo o conteúdo.
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/0f2a63f9-1a64-4cb6-88fd-1144085677e8)
+<img width="817" height="229" alt="image" src="https://github.com/user-attachments/assets/d4383d71-7409-40ba-a2ec-b4bdd5458fac" />
 
-7 - Feito isso, apenas siga os comandos após o commit para finalizar o processo
 
-![image](https://github.com/freesheets/GitTutorial/assets/169274014/c72cadc0-4381-4ef1-8e96-2d3be1cc85d6)
+---
 
-# Comandos Git
+## 5. Acesse as configurações do GitHub
 
+Abra sua conta no GitHub, clique na sua foto de perfil e acesse:
 
+**Settings**
 
+![GitHub Settings](https://github.com/freesheets/GitTutorial/assets/169274014/0330d636-a8dd-47c8-9e31-7440ef7d69bc)
 
+---
 
+## 6. Acesse SSH and GPG Keys
 
+Dentro das configurações, selecione:
 
+**SSH and GPG keys**
 
+![SSH and GPG Keys](https://github.com/freesheets/GitTutorial/assets/169274014/80c9a149-367a-4b02-8867-6b476e92287e)
 
+---
 
+## 7. Adicione sua chave
 
+Clique em **New SSH key**, informe um título para identificar seu computador e cole sua chave pública no campo **Key**.
 
+![Adicionar SSH Key](https://github.com/freesheets/GitTutorial/assets/169274014/84c4831e-15c1-4f97-8a42-1acd022a092e)
+
+Pronto! Sua máquina poderá se autenticar no GitHub utilizando SSH.
+
+---
+
+# 📦 Como criar um repositório e enviar para o GitHub
+
+Agora podemos versionar um projeto e enviá-lo para o GitHub.
+
+## 1. Abra o Git Bash na pasta do projeto
+
+Entre na pasta que deseja versionar e abra o **Git Bash**.
+
+![Abrindo projeto](https://github.com/freesheets/GitTutorial/assets/169274014/1981bc8e-7904-4f61-ad5a-f3cd039cab45)
+
+---
+
+## 2. Inicialize o repositório
+
+Execute:
+
+```bash
+git init
+```
+
+Esse comando transforma a pasta atual em um repositório Git.
+
+---
+
+## 3. Adicione os arquivos
+
+Para adicionar um arquivo específico:
+
+```bash
+git add nome-do-arquivo
+```
+
+Para adicionar todas as alterações:
+
+```bash
+git add .
+```
+
+Os arquivos adicionados ficam na **Staging Area**, aguardando a criação do próximo commit.
+
+---
+
+## 4. Crie seu primeiro commit
+
+Agora registre as alterações:
+
+```bash
+git commit -m "sua mensagem de commit aqui"
+```
+O `-m` permite informar uma mensagem descrevendo o que foi realizado naquele commit.
+
+---
+
+## 5. Visualize o histórico
+
+Para visualizar os commits realizados:
+
+```bash
+git log
+```
+
+Uma versão mais resumida também pode ser visualizada com:
+
+```bash
+git log --oneline
+```
+
+## 6. Crie o repositório no GitHub
+
+No GitHub, selecione **New repository**, escolha o nome do projeto e crie o repositório.
+
+![Criando repositório](https://github.com/freesheets/GitTutorial/assets/169274014/c1408dbc-127f-4393-9d74-600b73178c29)
+
+Caso seu projeto local já possua arquivos, você pode criar o repositório **sem adicionar README, `.gitignore` ou License**, simplificando o primeiro envio.
+
+![Configuração do repositório](https://github.com/freesheets/GitTutorial/assets/169274014/0f2a63f9-1a64-4cb6-88fd-1144085677e8)
+
+---
+
+## 7. Conecte o projeto ao GitHub
+
+Após criar o repositório, copie o endereço **SSH** fornecido pelo GitHub.
+
+Execute:
+
+```bash
+git branch -M main
+git remote add origin git@github.com:SEU-USUARIO/SEU-REPOSITORIO.git
+git push -u origin master
+```
+
+![Enviando projeto para GitHub](https://github.com/freesheets/GitTutorial/assets/169274014/c72cadc0-4381-4ef1-8e96-2d3be1cc85d6)
+
+Pronto! 🎉
+
+Seu projeto local agora está versionado com Git e conectado ao GitHub.
+
+---
+
+# 🧰 Comandos Git essenciais
+
+| Comando                    | Função                                           |
+| -------------------------- | ------------------------------------------------ |
+| `git init`                 | Inicializa um repositório Git                    |
+| `git status`               | Mostra o estado atual dos arquivos               |
+| `git add .`                | Adiciona todas as alterações à Staging Area      |
+| `git commit -m "mensagem"` | Cria um novo commit                              |
+| `git log`                  | Exibe o histórico de commits                     |
+| `git log --oneline`        | Exibe o histórico resumido                       |
+| `git branch`               | Lista as branches                                |
+| `git switch nome-branch`   | Troca de branch                                  |
+| `git pull`                 | Baixa e integra alterações do repositório remoto |
+| `git push`                 | Envia commits para o repositório remoto          |
+| `git clone URL`            | Clona um repositório existente                   |
+| `git remote -v`            | Exibe os repositórios remotos configurados       |
+
+---
+
+# 🔁 Fluxo básico do dia a dia
+
+Depois que o projeto estiver configurado, o fluxo mais comum será:
+
+```bash
+git pull
+```
+
+Faça suas alterações no código e depois:
+
+```bash
+git status
+git add .
+git commit -m "Descrição da alteração"
+git push
+```
+
+De forma resumida:
+
+```text
+Código alterado
+      ↓
+   git add
+      ↓
+  git commit
+      ↓
+   git push
+      ↓
+    GitHub
+```
+
+## 🎯 Conclusão
+
+Com esses conceitos você já consegue utilizar o fluxo básico de **Git + GitHub** para versionar seus projetos.
+
+Conforme evoluir, vale estudar também **branches, merge, pull requests, conflitos, `.gitignore`, Git Flow e Conventional Commits**.
